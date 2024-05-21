@@ -1,0 +1,1 @@
+py scripts/cip.py build  --variant MFC_infra  

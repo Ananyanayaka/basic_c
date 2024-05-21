@@ -1,0 +1,25 @@
+{
+    "Filter_REQ_for_state_and_pvRestriction": {
+        "Requirements": {
+            "Do not show obsolete requirements": {
+               "attribute" : "State (Standard Workflow)",
+               "operator" : "matches_not",
+               "values" : ["Obsolete"]
+            },
+            "Do not show requirements with PvRestriction Undefined": {
+                "attribute" : "pvRestriction",
+                "operator" : "matches_not",
+                "values" : ["Undefined"]
+             }
+        }
+    },
+    "Filter_REQ_for_Reqs_In_Package": {
+        "Requirements": {
+            "show only requirements implemented in APC package": {
+               "attribute" : "Legacy Information",
+               "operator" : "matches",
+               "values" : ["PKG:adas_apc"]
+            }
+        }
+    }
+}

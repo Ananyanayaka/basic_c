@@ -1,0 +1,38 @@
+{
+    "$schema": "https://cip-config.cmo.conti.de/v2/configuration/cip_tracing_tool/cip_environment/1.0/schemas/cip_tracing_tool_config_schema.json",
+    "configurations": {
+        "SEC_TI_AWR2944_R5": {
+            "module_config": "conf/cip_tracing_tool_config/modules.json",
+            "report_config": "conf/cip_tracing_tool_config/reports.json",
+            "write_dump_file": "cip_dump.json",
+            "variables": {
+                "CIP_VARIANT": "SEC_TI_AWR2944_R5",
+                "CIP_PLATFORM": "windows_cortex_r5f_diab_7-0-2-2",
+                "CIP_BUILD_CONFIG": "conf/build.yml",
+                "CIP_DEPENDENCY_GRAPH": "generation/dependency_graph.json"
+            }
+        },
+        "S32R45_M7": {
+            "module_config": "conf/cip_tracing_tool_config/modules.json",
+            "report_config": "conf/cip_tracing_tool_config/reports.json",
+            "write_dump_file": "cip_dump.json",
+            "variables": {
+                "CIP_VARIANT": "S32R45_M7",
+                "CIP_PLATFORM": "windows_cortex_m7_diab_7-0-2-2",
+                "CIP_BUILD_CONFIG": "conf/build.yml",
+                "CIP_DEPENDENCY_GRAPH": "generation/dependency_graph.json"
+            }
+        },
+        "S32R45_A53": {
+            "module_config": "conf/cip_tracing_tool_config/modules.json",
+            "report_config": "conf/cip_tracing_tool_config/reports.json",
+            "write_dump_file": "cip_dump.json",
+            "variables": {
+                "CIP_VARIANT": "S32R45_A53",
+                "CIP_PLATFORM": "windows_cortex_a53_diab_7-0-2-2",
+                "CIP_BUILD_CONFIG": "conf/build.yml",
+                "CIP_DEPENDENCY_GRAPH": "generation/dependency_graph.json"
+            }
+        }
+    }
+}

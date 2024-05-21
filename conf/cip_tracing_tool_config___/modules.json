@@ -1,0 +1,179 @@
+{
+    "modules":
+    {
+        "Requirements": {
+            "parsers":
+            [
+            {
+                "class": "parsers.jazz.DNGParser",
+                "config":
+                {
+                  "dump_json": true,
+                  "component" : "adas_apc",
+                  "dng_server": "https://jazz.conti.de",
+                  "dng_business_unit": "ADAS",
+                  "dng_project_area": "Radar_Generic_GC",
+                  "dng_component": "Radar_Generic_GC_SW_Configuration",
+                  "dng_global_configuration": "Radar_Generic_GC_SW_Configuration_WorkOn",
+                  "dng_local_configuration": "LIB_L3_SW_Design_AM_Generic",
+                  "dng_module": "DMA_DirectMemoryAccess",
+                  "dng_artefact_type_filter": ["Design Element"],
+                  "dng_attributes": [ "State (Standard Workflow)" , "pvRestriction", "Legacy Information" ],
+                  "cache_ttl": 3600
+               }
+            },
+            {
+                "class": "parsers.jazz.DNGParser",
+                "config":
+                {
+                  "dump_json": true,
+                  "component" : "adas_apc",
+                  "dng_server": "https://jazz.conti.de",
+                  "dng_business_unit": "ADAS",
+                  "dng_project_area": "Radar_Generic_GC",
+                  "dng_component": "Radar_Generic_GC_SW_Configuration",
+                  "dng_global_configuration": "Radar_Generic_GC_SW_Configuration_WorkOn",
+                  "dng_local_configuration": "LIB_L3_SW_Design_AM_Generic",
+                  "dng_module": "QSF",
+                  "dng_artefact_type_filter": ["Design Element"],
+                  "dng_attributes": [ "State (Standard Workflow)" , "pvRestriction", "Legacy Information" ],
+                  "cache_ttl": 3600
+               }
+
+            },
+            {
+                "class": "parsers.jazz.DNGParser",
+                "config":
+                {
+                  "dump_json": true,
+                  "component" : "adas_apc",
+                  "dng_server": "https://jazz.conti.de",
+                  "dng_business_unit": "ADAS",
+                  "dng_project_area": "Radar_Generic_GC",
+                  "dng_component": "Radar_Generic_GC_SW_Configuration",
+                  "dng_global_configuration": "Radar_Generic_GC_SW_Configuration_WorkOn",
+                  "dng_local_configuration": "LIB_L3_SW_Design_AM_Generic",
+                  "dng_module": "SBL",
+                  "dng_artefact_type_filter": ["Design Element"],
+                  "dng_attributes": [ "State (Standard Workflow)" , "pvRestriction", "Legacy Information" ],
+                  "cache_ttl": 3600
+               }
+
+            },
+            {
+                "class": "parsers.jazz.DNGParser",
+                "config":
+                {
+                  "dump_json": true,
+                  "component" : "adas_apc",
+                  "dng_server": "https://jazz.conti.de",
+                  "dng_business_unit": "ADAS",
+                  "dng_project_area": "Radar_Generic_GC",
+                  "dng_component": "Radar_Generic_GC_SW_Configuration",
+                  "dng_global_configuration": "Radar_Generic_GC_SW_Configuration_WorkOn",
+                  "dng_local_configuration": "LIB_L3_SW_Design_AM_Generic",
+                  "dng_module": "StartUp",
+                  "dng_artefact_type_filter": ["Design Element"],
+                  "dng_attributes": [ "State (Standard Workflow)" , "pvRestriction", "Legacy Information" ],
+                  "cache_ttl": 3600
+               }
+
+            },
+            {
+                "class": "parsers.jazz.DNGParser",
+                "config":
+                {
+                  "dump_json": true,
+                  "component" : "adas_apc",
+                  "dng_server": "https://jazz.conti.de",
+                  "dng_business_unit": "ADAS",
+                  "dng_project_area": "Radar_Generic_GC",
+                  "dng_component": "Radar_Generic_GC_SW_Configuration",
+                  "dng_global_configuration": "Radar_Generic_GC_SW_Configuration_WorkOn",
+                  "dng_local_configuration": "LIB_L3_SW_Design_AM_Generic",
+                  "dng_module": "SYS",
+                  "dng_artefact_type_filter": ["Design Element"],
+                  "dng_attributes": [ "State (Standard Workflow)" , "pvRestriction", "Legacy Information" ],
+                  "cache_ttl": 3600
+		}
+            }
+
+        ]},
+        "Design":
+        {
+            "parsers":
+            [{
+                "class": "parsers.dox.DoxParser",
+                "config":
+                {
+                    "path": "src",
+                    "component": "adas_apc",
+                    "extensions": [".c", ".h", ".S"]
+                }
+            }]
+        },
+        "Code":
+        {
+            "parsers":
+            [{
+                "class": "parsers.code.CodeParser",
+                "config":
+                {
+                    "path": "src",
+                    "component": "adas_apc",
+                    "extensions": [".c", ".h", ".S"]
+                }
+            }]
+        },
+        "UnitTest":
+        {
+            "parsers":
+            [{
+                "class": "parsers.gtest.GtestParser",
+                "config":
+                {
+                    "path": "tests",
+                    "component": "adas_apc"
+                }
+            }]
+        }
+    },
+    "allowed_links": [
+        {
+            "linked_entity": {
+                "module": "Requirements",
+                "component": "adas_apc"
+            },
+            "linking_entities": [
+                {
+                    "module": "Design",
+                    "component": "adas_apc"
+                }
+            ]
+        },
+        {
+            "linked_entity": {
+                "module": "Design",
+                "component": "adas_apc"
+            },
+            "linking_entities": [
+                {
+                    "module": "Code",
+                    "component": "adas_apc"
+                }
+            ]
+        },
+        {
+            "linked_entity": {
+                "module": "Design",
+                "component": "adas_apc"
+            },
+            "linking_entities": [
+                {
+                    "module": "UnitTest",
+                    "component": "adas_apc"
+                }
+            ]
+        }
+    ]
+}

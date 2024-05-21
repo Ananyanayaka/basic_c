@@ -1,0 +1,86 @@
+{
+    "TopDownTraceabilityReport_adas_apc":
+    {
+       "class": "reports.top_down_traceability_report.TopDownTraceabilityReport",
+       "enabled": true,
+       "config":
+       {
+          "description": "Top-down traceability from requirements to code for the adas_apc component",
+          "filters": [
+            {"$ref": "filters.json#/Filter_REQ_for_state_and_pvRestriction"},
+            {"$ref": "filters.json#/Filter_REQ_for_Reqs_In_Package"}
+          ],
+          "start_module": "Requirements",
+          "listed_attributes":
+          {
+             "description": "Description"
+          },
+          "end_modules":
+          [
+             "Design",
+             "Code",
+             "UnitTest"
+          ],
+          "summary": true,
+          "output_format": "html"
+       }
+    },
+    "LinkReport_adas_apc":
+    {
+       "class": "reports.traceability_link_report.TraceabilityLinkReport",
+       "enabled": true,
+       "config":
+       {
+          "description": "Requirements, design elements, code references and unit tests for the adas_apc component with incoming and outgoing links",
+          "filters": [
+            {"$ref": "filters.json#/Filter_REQ_for_state_and_pvRestriction"},
+            {"$ref": "filters.json#/Filter_REQ_for_Reqs_In_Package"}
+          ],
+          "start_module": "Requirements",
+          "included_modules":
+          [
+             "Requirements",
+             "Design",
+             "Code",
+             "UnitTest"
+          ]
+       }
+    },
+    "ActionListReport_adas_apc__LinkingProblems":
+    {
+       "class": "reports.action_list_report.ActionListReport",
+       "enabled": true,
+       "config": {
+           "description": "Action list for incorrect or missing linkage for the adas_apc component",
+           "filters": [
+            {"$ref": "filters.json#/Filter_REQ_for_state_and_pvRestriction"},
+            {"$ref": "filters.json#/Filter_REQ_for_Reqs_In_Package"}
+           ],
+           "included_modules": [
+               "Requirements",
+               "Design",
+               "Code",
+               "UnitTest"
+           ],
+           "verified_components": [
+               "adas_apc"
+           ],
+           "show_missing_upwards_links": "True",
+           "output_format": "html"
+       }
+    },
+    "TraceabilityGreenGraphReport": 
+    { 
+      "class": "reports.traceability_green_graph_report.TraceabilityGreenGraphReport",
+      "config": 
+      {
+        "description": "Traceability Green Graph Report",
+        "filters": [
+         {"$ref": "filters.json#/Filter_REQ_for_state_and_pvRestriction"},
+         {"$ref": "filters.json#/Filter_REQ_for_Reqs_In_Package"}
+        ],
+        "included_modules": [ "Requirements","Design", "Code", "UnitTest"],
+        "verified_components": []
+      }
+   }
+ }

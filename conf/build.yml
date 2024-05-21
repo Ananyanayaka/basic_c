@@ -1,0 +1,214 @@
+type: component
+cmake_use_system_packages: true
+cmake_use_bricks_core: true
+cmake_use_platforms: true
+name: adas_apc
+description: package implementation for AUTOSAR platform dependent components
+owner: ADAS GmbH
+license: ADAS GmbH; all rights reserved
+major_version: 35
+schema_version: 2
+
+layered_config_file_list:
+    - ./conf/build.yml
+    - ./conf/cqg1.yml
+
+options:
+    CPU_PLATFORM:
+        type: string
+        enum:
+        - none
+        - RCARV3H
+        default: "none"
+    SEC_VARIANT:
+        type: string
+        enum:
+        - none
+        - SECURE
+        default: "none"
+    CACHE_API:
+        type: string
+        enum:
+        - none
+        - CACHE_API
+        default: "none"
+    CACHE_API_VERSION:
+        type: string
+        enum:
+        - none
+        - S32R45_A53
+        - S32R45_M7
+        - TI_AWR2544
+        - TI_AWR2944
+        - XILZUSP_R5
+        default: "none"
+    DMA_API:
+        type: string
+        enum:
+        - none
+        - DMA_API
+        default: "none"
+    QSF:
+        type: string
+        enum:
+        - none
+        - QSF
+        default: "none"
+    SBL:
+        type: string
+        enum:
+        - none
+        - SBL
+        default: "none"
+    SBL_VERSION:
+        type: string
+        enum:
+        - none
+        - TI_AWR2544
+        - TI_AWR2944
+        - TI_AWR2944_SEC
+        default: "none"
+    STARTUP:
+        type: string
+        enum:
+        - none
+        - STARTUP
+        default: "none"
+    STARTUP_VERSION:
+        type: string
+        enum:
+        - none
+        - M4
+        - RCARV3H
+        - RENR7
+        - TI_AWR2544
+        - TI_AWR2944
+        - S32R45_M7
+        - S32R45_A53
+        - AD685_R52
+        default: "none"
+    SYS:
+        type: string
+        enum:
+        - none
+        - SYS
+        default: "none"
+    SYS_CRC:
+        type: string
+        enum:
+        - none
+        - sys_crc_a4_awr2544_r5f_hwsw
+        - sys_crc_a4_awr2944_r5f_hwsw
+        - sys_crc_a4_ren
+        - sys_crc_a4_sw
+        - sys_crc_a4_spc58
+        - sys_crc_a4_xil_a53
+        - sys_crc_a4_xil_r5
+        - sys_crc_a4_nxp_m7
+        default: "none"
+    SYS_EXT:
+        type: string
+        enum:
+        - none
+        - sys_ext
+        - sys_ext_m4
+        - sys_ext_s32r45
+        - sys_ext_xil_a53
+        - sys_ext_xil_r5
+        - sys_ext_1
+        - sys_ext_2        
+        default: "none"
+    SYS_INTERRUPT:
+        type: string
+        enum:
+        - none
+        - sys_interrupt_arm_m4_diab
+        - sys_interrupt_arm_r5_diab
+        - sys_interrupt_arm_v7v8
+        - sys_interrupt_no_core_check_rr
+        - sys_interrupt_nxp_a53
+        - sys_interrupt_nxp_m7
+        - sys_interrupt_os_based
+        - sys_interrupt_tda4
+        - sys_interrupt_ti_c66
+        - sys_interrupt_ti_r5
+        default: "none"
+    SYS_KPI:
+        type: string
+        enum:
+        - none
+        - sys_kpi_awr2544
+        - sys_kpi_awr2944
+        - sys_kpi_s32r45
+        - sys_kpi_xilzusp
+        default: "none"
+    SYS_MEM:
+        type: string
+        enum:
+        - none
+        - sys_mem_awr2544_m4
+        - sys_mem_awr2944_m4
+        - sys_mem_nxp_a53
+        - sys_mem_nxp_m7
+        - sys_mem_rena53
+        - sys_mem_renr7
+        - sys_mem_spc58
+        - sys_mem_tic66
+        - sys_mem_tir5
+        - sys_mem_xila53
+        - sys_mem_xilr5
+        default: "none"
+    SYS_PAL:
+        type: string
+        enum:
+        - none
+        - sys_pal_awr2544
+        - sys_pal_awr2944
+        - sys_pal_nxp_a53
+        - sys_pal_nxp_m7
+        - sys_pal_rcarv3m
+        - sys_pal_spc58
+        - sys_pal_tda4
+        - sys_pal_vecu
+        - sys_pal_xilzusp
+        default: "none"
+    SYS_TIME:
+        type: string
+        enum:
+        - none
+        - sys_time_generic
+        - sys_time_vecu
+        default: "none"
+    VECU_ENABLED:
+        type: boolean
+        default: false
+
+
+variants:
+    MFC_infra:
+        production:
+            platforms:
+                - build: windows_cortex_r7_clang_6-6-3
+            components: &MFC_infra_components
+                - QSF_COMP
+                - STARTUP_COMP
+                # - SYS_COMMON_COMP
+                # - SYS_CRC_COMP
+                # - SYS_EXT_COMP
+                # - SYS_INT_COMP
+                # - SYS_MEM_COMP
+                # - SYS_PAL_COMP
+                # - SYS_TIME_COMP
+            options: &MFC_infra_options
+                CPU_PLATFORM: RCARV3H
+                QSF: QSF
+                STARTUP: STARTUP
+                STARTUP_VERSION: RCARV3H
+                # SYS: SYS
+                # SYS_CRC: sys_crc_a4_ren
+                # SYS_EXT: sys_ext
+                # SYS_INTERRUPT: sys_interrupt_os_based
+                # SYS_MEM: sys_mem_renr7
+                # SYS_PAL: sys_pal_rcarv3m
+                # SYS_TIME: sys_time_generic
+ 
