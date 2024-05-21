@@ -1,7 +1,0 @@
-2024-05-21 18:10:27,833 - INFO - Bricks build system, version 4.26.0
-2024-05-21 18:10:27,835 - DEBUG - Setting CONAN_USER_HOME to C:\Users\uie66725\cip_config_dir\conan.
-2024-05-21 18:10:27,839 - DEBUG - Authentication found for hosts: dict_keys(['https://eu.artifactory.conti.de'])
-2024-05-21 18:10:30,788 - INFO - Build command will be executed
-2024-05-21 18:10:30,789 - INFO - customevent.duration.v2|1716295230790|start|8332331|bricks_build|execute||
-2024-05-21 18:10:30,798 - INFO - Loading build config D:\basic_c\conf\build.yml
-2024-05-21 18:10:31,205 - ERROR - The package you are trying to build is not a git repository and Bricks could not determine the root of the project. To continue, please make your package a git repository or place the build.yml file either in conf directory or in the root of your package.
