@@ -1,0 +1,1 @@
+add_subdirectory(${STARTUP_VERSION})

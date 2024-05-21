@@ -1,0 +1,8 @@
+set(FILE_SET
+    ${CMAKE_CURRENT_SOURCE_DIR}/core_cm7.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/Startup.s
+)
+
+set_target_properties(STARTUP_PLATFORM PROPERTIES
+    RESOURCE "${FILE_SET}"
+)

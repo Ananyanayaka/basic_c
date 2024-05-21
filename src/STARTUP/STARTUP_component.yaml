@@ -1,0 +1,23 @@
+# This component definition file implements the following schema
+$schema: https://cip-config.cmo.conti.de/v2/configuration/cip_service_reporting/component/1.0/schemas/component.json
+name: STARTUP
+owners: # a list of package owners
+  - name: Kosak Thomas
+    email: thomas.kosak@continental-corporation.com
+    user_id: uidg9094
+  - name: Susan Gabriel
+    email: gabriel.susan@continental-corporation.com
+    user_id: uidt4386
+  - name: Singh Indermohan
+    email: indermohan.singh@continental-corporation.com
+    user_id: uidk6751
+  - name: Stukalov Veniamin
+    email: veniamin.stukalov@continental-corporation.com
+    user_id: uidm5702
+
+include:
+  - './'
+
+
+
+
